@@ -83,47 +83,37 @@ flowchart LR
 ---
 
 ## IP Addressing Plan
-### HQ LAN
-- Network: `192.168.10.0/24`
-- R1-HQ Fa0/0: `192.168.10.1`
-- SW1-HQ VLAN 1: `192.168.10.2`
-- PC-HQ: `192.168.10.10`
-- Default gateway: `192.168.10.1`
-
-### Branch LAN
-- Network: `192.168.20.0/24`
-- R3-BRANCH Fa0/0: `192.168.20.1`
-- SW2-BRANCH VLAN 1: `192.168.20.2`
-- PC-BRANCH: `192.168.20.10`
-- Default gateway: `192.168.20.1`
+| HQ LAN                | IP Address        |     | Branch LAN            | IP Address        |       
+| --------------------- | ----------------- | --- | --------------------- | ----------------- |
+| Network:              | `192.168.10.0/24` |     | Network:              | `192.168.20.0/24` |
+| R1-HQ Fa0/0:          | `192.168.10.1`    |     | R3-BRANCH Fa0/0:      | `192.168.20.1`    |   
+| SW1-HQ VLAN 1:        | `192.168.10.2`    |     | SW2-BRANCH VLAN 1:    | `192.168.20.2`    |
+| PC-HQ:                | `192.168.10.10`   |     | PC-BRANCH:            | `192.168.20.10`   |
+| Default gateway:      | `192.168.10.1`    |     | Default gateway:      | `192.168.20.1`    |
 
 ### Serial Point-to-Point Links
-- R1-HQ to R2-HQ
-  - Network: `10.0.1.0/30`
-  - R1-HQ S0/3/0: `10.0.1.1`
-  - R2-HQ S0/3/0: `10.0.1.2`
-- R4-BRANCH to R3-BRANCH
-  - Network: `10.0.2.0/30`
-  - R3-BRANCH S0/3/0: `10.0.2.1`
-  - R4-BRANCH S0/3/0: `10.0.2.2`
+| R1-HQ to R2-HQ        | IP Address        |     | R4-BRANCH to R3-BRANCH | IP Address        |       
+| --------------------- | ----------------- | --- | ---------------------- | ----------------- |
+| Network:              | `10.0.1.0/30`     |     | Network:               | `10.0.2.0/30`     |
+| R1-HQ S0/3/0:         | `10.0.1.1`        |     | R3-BRANCH S0/3/0:      | `10.0.2.1`        |   
+| R2-HQ S0/3/0:         | `10.0.1.2`        |     | R4-BRANCH S0/3/0:      | `10.0.2.2`        |
 
-### Ethernet OSPF Transit Segment
-- Network: `10.0.3.0/29`
-- R2-HQ Fa0/0: `10.0.3.1`
-- R4-BRANCH Fa0/0: `10.0.3.2`
-- R5-WAN Fa0/0: `10.0.3.3`
 
-### ISP Link
-- Network: `203.0.113.0/30`
-- R5-WAN Gi0/2/0: `203.0.113.1`
-- ISPR1 Gi0/0: `203.0.113.2`
+| Ethernet OSPF Transit Segment |                   |        
+| ----------------------------- | ----------------- |
+| Network:                      |  `10.0.3.0/29`    |    
+| R2-HQ Fa0/0:                  | `10.0.3.1`        |     
+| R4-BRANCH Fa0/0:              | `10.0.3.2`        |    
+| R5-WAN Fa0/0:                 | `10.0.3.3`        |     
 
-### Loopbacks
-- R1-HQ Lo0: `1.1.1.1/32`
-- R2-HQ Lo0: `2.2.2.2/32`
-- R3-BRANCH Lo0: `3.3.3.3/32`
-- R4-BRANCH Lo0: `4.4.4.4/32`
--  R5-WAN Lo0: `5.5.5.5/32`
+
+| ISP Link              | IP Address        |     | Loopbacks             | IP Address      |       
+| --------------------- | ----------------- | --- | --------------------- | --------------- |
+| Network:              | `203.0.113.0/30`  |     | R1-HQ Lo0:            | `1.1.1.1/32`    |
+| R5-WAN Gi0/2/0:       | `203.0.113.1`     |     | R2-HQ Lo0:            | `2.2.2.2/32`    |   
+| ISPR1 Gi0/0:          | `203.0.113.2`     |     | R3-BRANCH Lo0:        | `3.3.3.3/32`    |
+|                       |                   |     | R4-BRANCH Lo0:        | `4.4.4.4/32`    |
+|                       |                   |     | R5-WAN Lo0:           | `5.5.5.5/32`    |
 
 ---
 
