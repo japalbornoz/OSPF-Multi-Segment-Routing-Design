@@ -63,3 +63,13 @@ Observed results:
 Failure Test 1 behaved as expected.
 
 Shutting down the point-to-point serial link between R1-HQ and R2-HQ caused the OSPF adjacency on that link to fail, which removed HQ connectivity from the rest of the OSPF domain. R1-HQ lost all remotely learned routes, including the external default route, while the Ethernet OSPF segment between R2-HQ, R4-BRANCH, and R5-WAN remained stable. This confirmed that the HQ site depends entirely on the R1-HQ to R2-HQ serial link for reachability beyond the local LAN.
+
+---
+
+## Evidence (Screenshots)
+- ![Failure Test 1 - Link Shutdown](../screenshots/failure-test-1-link-down.png)
+- ![Failure Test 1 - R1 Neighbor Missing](../screenshots/failure-test-1-r1-neighbor-loss.png)
+- ![Failure Test 1 - R2 Neighbor Missing R1](../screenshots/failure-test-1-r2-neighbor-loss.png)
+- ![Failure Test 1 - R1 Route Loss](../screenshots/failure-test-1-r1-route-loss.png)
+- ![Failure Test 1 - PC-HQ to PC-BRANCH Ping Fail](../screenshots/failure-test-1-pc-hq-to-pc-branch-fail.png)
+- ![Failure Test 1 - PC-HQ to Gateway Ping Success](../screenshots/failure-test-1-pc-hq-to-gateway-success.png)
