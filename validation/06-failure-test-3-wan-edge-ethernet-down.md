@@ -73,4 +73,4 @@ Shutting down the WAN-edge router’s Ethernet interface removed R5-WAN from the
   
 - ![Failure Test 3 - PC-BRANCH to HQ Still Works but 8.8.8.8 Fails](../screenshots/failure-test-3-pc-branch-internal-ok-external-fail.png)
 
-- ![Failure Test 3 - PC-BRANCH to HQ Still Works but 8.8.8.8 Fails](../screenshots/recovery-test-3-pc-hq-pc-branch-internal-success-and-external-fail.png)
+- ![Failure Test 3 - PC-BRANCH to HQ Still Works but 8.8.8.8 Fails](../screenshots/failure-test-3-pc-hq-pc-branch-internal-success-and-external-fail.png)
